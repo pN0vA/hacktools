@@ -1,0 +1,17 @@
+[package]
+name = "hacktools"
+version = "0.1.1"
+authors = ["n0vA"]
+edition = "2021"
+description = "A library of functions for red teamers and hobbyists alike"
+documentation = "https://docs.rs/hacktools"
+repository = "https://github.com/pN0vA/hacktools"
+license = "MIT"
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+rustscan = "2.1.1"
+reqwest = {version ="0.11.18", features = ["blocking"]}
+serde = { version = "1.0", features = ["derive"] }
+serde_json = {version = "1.0.102"}
+memmap = {version = "0.7.0"}
