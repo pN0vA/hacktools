@@ -40,7 +40,7 @@ The next function is the "shell" command which can be used to generate and execu
 
 Will be used as:
 ```rust
-using hacktools::{shell, tools::execute_shellcode}
+use hacktools::{shell, tools::execute_shellcode}
 fn main() {
   shell("string", execute_shellcode);
   //When ran execute_shellcode will ask you what file path to run on.
@@ -51,7 +51,8 @@ It has no version detection but will be useful to get ports in bulk.
 
 You will use it like:
 ```rust
-using hacktools::scan;
+use hacktools::scan;
+use std::time::Duration;
 fn main() {
   scan("127.0.0.1", 80..81, Duration::new(5, 0));
 }
