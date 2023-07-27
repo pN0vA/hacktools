@@ -59,6 +59,49 @@ fn main() {
 //you can scan multiple by doing something like 0..255 but if you want only one port remember to do the port number .. one number after.
 //To be helpful using the Colorized package I have added color red for closed green for open so your not stuck looking through all ports.
 ```
+
+The function "press_scan" which is used to open a wordpress site and use common hidden urls for recon.
+
+Will be used as:
+```rust
+use hacktools::press_scan;
+fn main() {
+  press_scan("https://wordpress.com", 0);
+/* Options 0-8:
+   "/wordpress/xmlrpc.php",
+    "/wp-content/uploads/",
+    "wp-json/wp/v2/users",
+    "/wp-json/wp/v2/users/1",
+    "/wp-json/?rest_route=/wp/v2/users/",
+    "/wp-json/?rest_route=/wp/v2/users/1",
+    "/?author=1",
+    "/wp-login.php",
+    "/wp-config.PhP"
+*/
+}
+```
+There is now also "forbid()". This allows you to check alternate pathways for a 403 forbidden.
+
+This is the garbage port to rust from iamj0ker's very useful shell script.
+
+You can use like:
+```rust
+use hacktools::forbid;
+fn main() {
+       forbid("http://example.com", "secret");
+}
+```
+"Msf" is a fast way to use msfvenom for quick shellcode and exploits through metasploit.
+
+Use case:
+```rust
+use hacktools::msf;
+ fn main() -> Result<(), io::Error> {
+     msf("exploit", "ip", port, "format", "Name of File");
+     //format is for what it is etc: Rust, Python, C
+     Ok(())
+ }
+ ```
 # Reminder
 please remember that at this time this is very unfinished and I will be adding to this. 
 
